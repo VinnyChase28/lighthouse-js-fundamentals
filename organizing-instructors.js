@@ -17,7 +17,7 @@ const organizeInstructors = function (instructors) {
     }
   }
 
-  console.log(obj);
+  return obj;
 };
 
 console.log(
