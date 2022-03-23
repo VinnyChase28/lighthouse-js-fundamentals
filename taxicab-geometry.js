@@ -18,7 +18,7 @@ const blocksAway = function (directions) {
         accumulator.push(array.slice(currentIndex, currentIndex + 2));
       return accumulator;
     }, [])
-    //push subarrays to array
+    //push direction pairs to array
     .map((p) => route.push([p[0], p[1]]));
 
   if (route[0][0] == "right") {
@@ -26,19 +26,20 @@ const blocksAway = function (directions) {
     x += route[0][1];
   }
 
+  //go up, even though going left should technically mean going west. 
   if (route[0][0] == "left") {
-    direction = west;
-    x -= route[0][1];
+    direction = north;
+    y += route[0][1];
   }
 
-  console.log(x, y);
+  //remove intial move, then iterate the rest
   route.shift();
-  // console.log(route);
 
   for (i in route) {
+
     // console.log(route[i]);
     if (route[i][0] == "left" && direction == east) {
-      drection = north;
+      direction = north;
       y += route[i][1];
     } else if (route[i][0] == "right" && direction == east) {
       direction = south;
