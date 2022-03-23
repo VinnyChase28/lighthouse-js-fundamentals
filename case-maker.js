@@ -1,17 +1,7 @@
-const camelCase = (input) => {
-  return input
-    .split(" ")
-    .map((word, index) => {
-      // If it is the first word make sure to lowercase all the chars.
-      if (index == 0) {
-        return word.toLowerCase();
-      }
-      // If it is not the first word only upper case the first char and lowercase the rest.
-      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-    })
-    .join("");
+const multiplicationTable = function (maxValue) {
+  // Your code here
 };
 
-console.log(camelCase("this is a string"));
-console.log(camelCase("loopy lighthouse"));
-console.log(camelCase("supercalifragalisticexpialidocious"));
+console.log(multiplicationTable(1));
+console.log(multiplicationTable(5));
+console.log(multiplicationTable(10));
